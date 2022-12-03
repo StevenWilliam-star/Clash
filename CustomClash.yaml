@@ -500,15 +500,13 @@ proxy-groups:
   - name: Spotify
     proxies:
       - DIRECT
+      - PROXY
     type: select
   - name: PROXY
-    proxies:
-      - 香港 01
-      - 香港 02
-      - 香港 03
-      - 香港 04
-      - 香港 05
-      - 香港 06
+    use:
+      - EFCLOUD1
+      - EFCLOUD2
+      - 一元
     type: select
 rule-providers:   
   apple:
