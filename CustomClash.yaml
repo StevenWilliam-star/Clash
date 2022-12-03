@@ -29,31 +29,32 @@ dns:
 proxy-providers:
   EFCLOUD1:
     type: http
-    url: "url"
+    url: "https://www.efcloud.cc/api/v1/client/subscribe?token=baa01d0bb41cb9d57e7234af2911a0c2"
     interval: 86400
+    filter: '香港'
     path: ./proxies/EFCLOUD1.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
   EFCLOUD2:
     type: http
-    url: "url"
+    url: "https://www.efcloud.cc/api/v1/client/subscribe?token=215f20a9b730b80f77ac5f97e64b4a0a"
     filter: '新加坡'
     interval: 86400
     path: ./proxies/EFCLOUD2.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
   一元:
     type: http
-    url: "url"
+    url: "https://api.wcc.best/sub?target=clash&url=https%3A%2F%2Fxn--4gq62f52gdss.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7b90fae9e1c15c23364fe0e2ae885182&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FMeilieage%2Fwebcdn%2Fmain%2Frule%2FArea_Media_NoAuto.ini&emoji=true&list=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&sort=false&new_name=true"
     interval: 86400
     path: ./proxies/yiyuan.yaml
     health-check:
       enable: true
-      interval: 600
+      interval: 3600
       url: http://www.gstatic.com/generate_204
 proxy-groups:
   - name: PROXY
