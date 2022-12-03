@@ -29,7 +29,7 @@ dns:
 proxy-providers:
   EFCLOUD1:
     type: http
-    url: "https://www.efcloud.cc/api/v1/client/subscribe?token=baa01d0bb41cb9d57e7234af2911a0c2"
+    url: ""
     interval: 86400
     filter: '香港'
     path: ./proxies/EFCLOUD1.yaml
@@ -39,7 +39,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   EFCLOUD2:
     type: http
-    url: "https://www.efcloud.cc/api/v1/client/subscribe?token=215f20a9b730b80f77ac5f97e64b4a0a"
+    url: ""
     filter: '新加坡'
     interval: 86400
     path: ./proxies/EFCLOUD2.yaml
@@ -49,7 +49,7 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   一元:
     type: http
-    url: "https://api.wcc.best/sub?target=clash&url=https%3A%2F%2Fxn--4gq62f52gdss.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7b90fae9e1c15c23364fe0e2ae885182&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FMeilieage%2Fwebcdn%2Fmain%2Frule%2FArea_Media_NoAuto.ini&emoji=true&list=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&sort=false&new_name=true"
+    url: ""
     interval: 86400
     path: ./proxies/yiyuan.yaml
     health-check:
@@ -89,9 +89,23 @@ rule-providers:
     url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml"
     interval: 86400
     path: ./rules/netflix.yaml
+  StreamingMedia:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/StreamingMedia.yaml"
+    interval: 86400
+    path: ./rules/StreamingMedia.yaml
+  global:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/global.yaml"
+    interval: 86400
+    path: ./rules/global.yaml
 rules:
   - RULE-SET,netflix,NETFLIX
   - RULE-SET,spotify,Spotify
+  - RULE-SET,StreamingMedia,PROXY
+  - RULE-SET,global,PROXY
   - RULE-SET,apple,DIRECT
   - DOMAIN-SUFFIX,cn,DIRECT
   - DOMAIN-KEYWORD,-cn,DIRECT
