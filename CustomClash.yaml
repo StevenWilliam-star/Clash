@@ -35,7 +35,7 @@ proxy-providers:
     path: ./proxies/EFCLOUD1.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 600
       url: http://www.gstatic.com/generate_204
   EFCLOUD2:
     type: http
@@ -45,7 +45,7 @@ proxy-providers:
     path: ./proxies/EFCLOUD2.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 600
       url: http://www.gstatic.com/generate_204
   一元:
     type: http
@@ -54,7 +54,7 @@ proxy-providers:
     path: ./proxies/yiyuan.yaml
     health-check:
       enable: true
-      interval: 3600
+      interval: 600
       url: http://www.gstatic.com/generate_204
 proxy-groups:
   - name: PROXY
