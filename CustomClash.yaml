@@ -1,16 +1,539 @@
 mixed-port: 7890
 allow-lan: true
-bind-address: '*'
+bind-address: "*"
 mode: rule
 log-level: info
-external-controller: '127.0.0.1:9090'
+external-controller: 127.0.0.1:9090
 dns:
-    enable: true
-    ipv6: false
-    default-nameserver: [223.5.5.5, 119.29.29.29]
-    enhanced-mode: redir-host
-    fake-ip-range: 198.18.0.1/16
-    use-hosts: true
-    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
-    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+  enable: true
+  ipv6: false
+  default-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  enhanced-mode: redir-host
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+  fallback:
+    - https://doh.dns.sb/dns-query
+    - https://dns.cloudflare.com/dns-query
+    - https://dns.twnic.tw/dns-query
+    - tls://8.8.4.4:853
+  fallback-filter:
+    geoip: true
+    ipcidr:
+      - 240.0.0.0/4
+      - 0.0.0.0/32
+proxies:
+  - name: 香港 01
+    type: trojan
+    server: dl-hk1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-hk.efpan.one
+  - name: 香港 02
+    type: trojan
+    server: dl-hk2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-hk.efpan.one
+  - name: 香港 03
+    type: trojan
+    server: dl-hk3.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-hk.efpan.one
+  - name: 香港 04
+    type: trojan
+    server: dl-hk4.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-hk.efpan.one
+  - name: 香港 05
+    type: trojan
+    server: dl-hkcmi1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-hk.efpan.one
+  - name: 香港 06
+    type: trojan
+    server: dl-hkcmi2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-hk.efpan.one
+  - name: 台湾 01
+    type: trojan
+    server: dl-tw1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-tw.efpan.one
+  - name: 台湾 02
+    type: trojan
+    server: dl-tw2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-tw.efpan.one
+  - name: 台湾 03
+    type: trojan
+    server: dl-tw3.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-tw.efpan.one
+  - name: 台湾 04
+    type: trojan
+    server: dl-tw4.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-tw.efpan.one
+  - name: 日本 01
+    type: trojan
+    server: dl-jp1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-jp.efpan.one
+  - name: 日本 02
+    type: trojan
+    server: dl-jp2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-jp.efpan.one
+  - name: 日本 03
+    type: trojan
+    server: dl-jp3.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-jp.efpan.one
+  - name: 日本 04
+    type: trojan
+    server: dl-jp4.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-jp.efpan.one
+  - name: 韩国 01
+    type: trojan
+    server: dl-kr1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ockrsl.efpan.one
+  - name: 韩国 02
+    type: trojan
+    server: dl-kr2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ockrcc.efpan.one
+  - name: 新加坡 01
+    type: trojan
+    server: dl-sg1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-sg.efpan.one
+  - name: 新加坡 02
+    type: trojan
+    server: dl-sg2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-sg.efpan.one
+  - name: 新加坡 03
+    type: trojan
+    server: dl-sg3.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-sg.efpan.one
+  - name: 新加坡 04
+    type: trojan
+    server: dl-sg4.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-sg.efpan.one
+  - name: 美国 01
+    type: trojan
+    server: dl-us1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-us.efpan.one
+  - name: 美国 02
+    type: trojan
+    server: dl-us2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-us.efpan.one
+  - name: 美国 03
+    type: trojan
+    server: dl-us3.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-us.efpan.one
+  - name: 美国 04
+    type: trojan
+    server: dl-us4.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-us.efpan.one
+  - name: 印度 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-in.efpan.one
+  - name: 印度 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-in.efpan.one
+  - name: 澳大利亚 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-au.efpan.one
+  - name: 澳大利亚 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-au.efpan.one
+  - name: 阿联酋 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ae.efpan.one
+  - name: 阿联酋 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ae.efpan.one
+  - name: 沙特 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-sa.efpan.one
+  - name: 沙特 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-sa.efpan.one
+  - name: 以色列 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-il.efpan.one
+  - name: 以色列 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-il.efpan.one
+  - name: 南非 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-za.efpan.one
+  - name: 南非 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-za.efpan.one
+  - name: 德国 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-de.efpan.one
+  - name: 德国 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-de.efpan.one
+  - name: 法国 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-fr.efpan.one
+  - name: 法国 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-fr.efpan.one
+  - name: 英国 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-uk.efpan.one
+  - name: 英国 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-uk.efpan.one
+  - name: 意大利 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-it.efpan.one
+  - name: 意大利 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-it.efpan.one
+  - name: 瑞士 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ch.efpan.one
+  - name: 瑞士 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ch.efpan.one
+  - name: 荷兰 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-nl.efpan.one
+  - name: 荷兰 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-nl.efpan.one
+  - name: 瑞典 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-se.efpan.one
+  - name: 瑞典 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-se.efpan.one
+  - name: 土耳其 01
+    type: trojan
+    server: dl-eu1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-tr.efpan.one
+  - name: 土耳其 02
+    type: trojan
+    server: dl-eu2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-tr.efpan.one
+  - name: 俄罗斯 01
+    type: trojan
+    server: core1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ru.efpan.one
+  - name: 俄罗斯 02
+    type: trojan
+    server: core2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ru.efpan.one
+  - name: 加拿大 01
+    type: trojan
+    server: dl-am1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ca.efpan.one
+  - name: 加拿大 02
+    type: trojan
+    server: dl-am2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ca.efpan.one
+  - name: 巴西 01
+    type: trojan
+    server: dl-am1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-br.efpan.one
+  - name: 巴西 02
+    type: trojan
+    server: dl-am2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-br.efpan.one
+  - name: 智利 01
+    type: trojan
+    server: dl-am1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-cl.efpan.one
+  - name: 智利 02
+    type: trojan
+    server: dl-am2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-cl.efpan.one
+  - name: 阿根廷 01
+    type: trojan
+    server: dl-am1.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ar.efpan.one
+  - name: 阿根廷 02
+    type: trojan
+    server: dl-am2.efpan.one
+    port: "443"
+    password: 4f1ff27d-602d-4c74-9f00-07fc784d5ed1
+    udp: true
+    sni: data-ar.efpan.one
+proxy-providers:
+  EFCLOUD1:
+    type: http
+    url: "https://api.wcc.best/sub?target=clash&url=https%3A%2F%2Fwww.efcloud.cc%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D215f20a9b730b80f77ac5f97e64b4a0a&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FMeilieage%2Fwebcdn%2Fmain%2Frule%2FArea_Media_NoAuto.ini&emoji=true&list=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&sort=false&new_name=true"
+    interval: 86400
+    path: ./proxies/EFCLOUD1.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  EFCLOUD2:
+    type: http
+    url: "https://api.wcc.best/sub?target=clash&url=https%3A%2F%2Fwww.efcloud.cc%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3Dbaa01d0bb41cb9d57e7234af2911a0c2&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FMeilieage%2Fwebcdn%2Fmain%2Frule%2FArea_Media_NoAuto.ini&emoji=true&list=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&sort=false&new_name=true"
+    interval: 86400
+    path: ./proxies/EFCLOUD2.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+  一元:
+    type: http
+    url: "https://api.wcc.best/sub?target=clash&url=https%3A%2F%2Fxn--4gq62f52gdss.com%2Fapi%2Fv1%2Fclient%2Fsubscribe%3Ftoken%3D7b90fae9e1c15c23364fe0e2ae885182&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FMeilieage%2Fwebcdn%2Fmain%2Frule%2FArea_Media_NoAuto.ini&emoji=true&list=false&udp=false&tfo=false&expand=true&scv=false&fdn=false&sort=false&new_name=true"
+    interval: 86400
+    path: ./proxies/yiyuan.yaml
+    health-check:
+      enable: true
+      interval: 600
+      url: http://www.gstatic.com/generate_204
+proxy-groups:
+  - name: NETFLIX
+    proxies:
+      - 新加坡 01
+      - 新加坡 02
+      - 新加坡 03
+      - 新加坡 04
+    type: select
+  - name: Spotify
+    proxies:
+      - DIRECT
+    type: select
+  - name: PROXY
+    proxies:
+      - 香港 01
+      - 香港 02
+      - 香港 03
+      - 香港 04
+      - 香港 05
+      - 香港 06
+    type: select
+rule-providers:   
+  apple:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/apple.yaml"
+    interval: 86400
+    path: ./rules/apple.yaml
+  spotify:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/spotify.yaml"
+    interval: 86400
+    path: ./rules/spotify.yaml
+  netflix:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml"
+    interval: 86400
+    path: ./rules/netflix.yaml
+rules:
+  - RULE-SET,netflix,NETFLIX
+  - RULE-SET,spotify,Spotify
+  - RULE-SET,apple,DIRECT
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-KEYWORD,-cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY
