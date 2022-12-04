@@ -30,7 +30,7 @@ proxy-providers:
   EFCLOUD1:
     type: http
     url: ""
-    interval: 86400
+    interval: 3600
     filter: '香港'
     path: ./proxies/EFCLOUD1.yaml
     health-check:
@@ -41,7 +41,7 @@ proxy-providers:
     type: http
     url: ""
     filter: '新加坡'
-    interval: 86400
+    interval: 3600
     path: ./proxies/EFCLOUD2.yaml
     health-check:
       enable: true
@@ -50,7 +50,7 @@ proxy-providers:
   一元:
     type: http
     url: ""
-    interval: 86400
+    interval: 3600
     path: ./proxies/yiyuan.yaml
     health-check:
       enable: true
