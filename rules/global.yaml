@@ -1,5 +1,4 @@
 payload:
-  #国际网址
   - DOMAIN-SUFFIX,9cache.com
   - DOMAIN-SUFFIX,9gag.com
   - DOMAIN-SUFFIX,abc.com
