@@ -102,12 +102,19 @@ rule-providers:
     url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/global.yaml"
     interval: 86400
     path: ./rules/global.yaml
+  china:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/china.yaml"
+    interval: 86400
+    path: ./rules/china.yaml
 rules:
   - RULE-SET,netflix,NETFLIX
   - RULE-SET,spotify,Spotify
   - RULE-SET,StreamingMedia,PROXY
   - RULE-SET,global,PROXY
   - RULE-SET,apple,DIRECT
+  - RULE-SET,china,DIRECT
   - DOMAIN-SUFFIX,cn,DIRECT
   - DOMAIN-KEYWORD,-cn,DIRECT
   - GEOIP,CN,DIRECT
