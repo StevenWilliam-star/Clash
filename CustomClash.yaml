@@ -90,6 +90,12 @@ rule-providers:
     url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml"
     interval: 86400
     path: ./rules/netflix.yaml
+  Bahamut:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/Bahamut.yaml"
+    interval: 86400
+    path: ./rules/Bahamut.yaml
   StreamingMedia:
     behavior: "classical" 
     type: http
@@ -111,6 +117,7 @@ rule-providers:
 rules:
   - RULE-SET,netflix,NETFLIX
   - RULE-SET,spotify,Spotify
+  - RULE-SET,Bahamut,Bahamut
   - RULE-SET,StreamingMedia,PROXY
   - RULE-SET,global,PROXY
   - RULE-SET,apple,DIRECT
