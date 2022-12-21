@@ -66,12 +66,22 @@ proxy-groups:
     use:
       - EFCLOUD2
     type: select
+   - name: Telegram
+    use:
+      - EFCLOUD2
+    type: select
   - name: Spotify
     proxies:
       - DIRECT
       - PROXY
     type: select
 rule-providers:   
+  telegram:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/telegram.yaml"
+    interval: 86400
+    path: ./rules/telegram.yaml
   apple:
     behavior: "classical" 
     type: http
@@ -115,6 +125,7 @@ rule-providers:
     interval: 86400
     path: ./rules/china.yaml
 rules:
+  - RULE-SET,telegram,Telegram
   - RULE-SET,netflix,NETFLIX
   - RULE-SET,spotify,Spotify
   - RULE-SET,Bahamut,Bahamut
