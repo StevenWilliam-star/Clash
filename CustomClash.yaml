@@ -62,6 +62,7 @@ proxy-groups:
     use:
       - EFCLOUD1
     type: select
+  - name: Google
   - name: NETFLIX
     use:
       - EFCLOUD2
@@ -80,6 +81,12 @@ proxy-groups:
       - PROXY
     type: select
 rule-providers:   
+  google:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/google.yaml"
+    interval: 86400
+    path: ./rules/google.yaml
   telegram:
     behavior: "classical" 
     type: http
@@ -135,6 +142,7 @@ rule-providers:
     interval: 86400
     path: ./rules/china.yaml
 rules:
+  - RULE-SET,google,Google
   - RULE-SET,telegram,Telegram
   - RULE-SET,github,Github
   - RULE-SET,netflix,NETFLIX
