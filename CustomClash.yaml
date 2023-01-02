@@ -123,6 +123,12 @@ rule-providers:
     url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/Bahamut.yaml"
     interval: 86400
     path: ./rules/Bahamut.yaml
+  NivodTv:
+    behavior: "classical" 
+    type: http
+    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/nivodTv.yaml"
+    interval: 86400
+    path: ./rules/nivodTv.yaml
   StreamingMedia:
     behavior: "classical" 
     type: http
@@ -148,6 +154,7 @@ rules:
   - RULE-SET,netflix,NETFLIX
   - RULE-SET,spotify,Spotify
   - RULE-SET,Bahamut,Bahamut
+  - RULE-SET,NivodTv,PROXY
   - RULE-SET,StreamingMedia,PROXY
   - RULE-SET,global,PROXY
   - RULE-SET,apple,DIRECT
