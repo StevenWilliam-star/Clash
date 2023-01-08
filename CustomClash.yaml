@@ -26,125 +26,571 @@ dns:
     ipcidr:
       - 240.0.0.0/4
       - 0.0.0.0/32
-proxy-providers:
-  EFCLOUD1:
-    type: http
-    url: ""
-    interval: 3600
-    filter: '香港'
-    path: ./proxies/EFCLOUD1.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  EFCLOUD2:
-    type: http
-    url: ""
-    filter: '新加坡'
-    interval: 3600
-    path: ./proxies/EFCLOUD2.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-  一元:
-    type: http
-    url: ""
-    interval: 3600
-    path: ./proxies/yiyuan.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
 proxies:
+  - name: 香港 01
+    type: trojan
+    server: dl-hk1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-hk.efyunpan.com
+  - name: 香港 02
+    type: trojan
+    server: dl-hk2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-hk.efyunpan.com
+  - name: 香港 03
+    type: trojan
+    server: dl-hk3.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-hk.efyunpan.com
+  - name: 香港 04
+    type: trojan
+    server: dl-hk4.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-hk.efyunpan.com
+  - name: 香港 05
+    type: trojan
+    server: dl-hk5.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-hk.efyunpan.com
+  - name: 香港 06
+    type: trojan
+    server: dl-hk6.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-hk.efyunpan.com
+  - name: 台湾 01
+    type: trojan
+    server: dl-tw1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-tw.efyunpan.com
+  - name: 台湾 02
+    type: trojan
+    server: dl-tw2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-tw.efyunpan.com
+  - name: 台湾 03
+    type: trojan
+    server: dl-tw3.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-tw.efyunpan.com
+  - name: 台湾 04
+    type: trojan
+    server: dl-tw4.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-tw.efyunpan.com
+  - name: 日本 01
+    type: trojan
+    server: dl-jp1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-jp.efyunpan.com
+  - name: 日本 02
+    type: trojan
+    server: dl-jp2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-jp.efyunpan.com
+  - name: 日本 03
+    type: trojan
+    server: dl-jp3.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-jp.efyunpan.com
+  - name: 日本 04
+    type: trojan
+    server: dl-jp4.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-jp.efyunpan.com
+  - name: 韩国 首尔
+    type: trojan
+    server: dl-kr1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ockrsl.efyunpan.com
+  - name: 韩国 春川
+    type: trojan
+    server: dl-kr2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ockrcc.efyunpan.com
+  - name: 新加坡 01
+    type: trojan
+    server: dl-sg1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-sg.efyunpan.com
+  - name: 新加坡 02
+    type: trojan
+    server: dl-sg2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-sg.efyunpan.com
+  - name: 新加坡 03
+    type: trojan
+    server: dl-sg3.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-sg.efyunpan.com
+  - name: 新加坡 04
+    type: trojan
+    server: dl-sg4.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-sg.efyunpan.com
+  - name: 美国 01
+    type: trojan
+    server: dl-us1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-us.xn--vur082k.cc
+  - name: 美国 02
+    type: trojan
+    server: dl-us2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-us.xn--vur082k.cc
+  - name: 美国 03
+    type: trojan
+    server: dl-us3.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-us.xn--vur082k.cc
+  - name: 美国 04
+    type: trojan
+    server: dl-us4.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-us.xn--vur082k.cc
+  - name: 印度 孟买
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-in.efyunpan.com
+  - name: 印度 海得拉巴
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-in2.efyunpan.com
+  - name: 澳大利亚 悉尼
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-au.efyunpan.com
+  - name: 澳大利亚 墨尔本
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-au2.efyunpan.com
+  - name: 阿联酋 迪拜
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ae.efyunpan.com
+  - name: 阿联酋 阿布扎比
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ae2.efyunpan.com
+  - name: 沙特 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-sa.efyunpan.com
+  - name: 沙特 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-sa.efyunpan.com
+  - name: 以色列 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-il.efyunpan.com
+  - name: 以色列 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-il.efyunpan.com
+  - name: 南非 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-za.efyunpan.com
+  - name: 南非 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-za.efyunpan.com
+  - name: 德国 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-de.efyunpan.com
+  - name: 德国 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-de.efyunpan.com
+  - name: 法国 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-fr.efyunpan.com
+  - name: 法国 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-fr.efyunpan.com
+  - name: 英国 伦敦
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-uk.efyunpan.com
+  - name: 英国 加的夫
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-uk2.efyunpan.com
+  - name: 意大利 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-it.efyunpan.com
+  - name: 意大利 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-it.efyunpan.com
+  - name: 西班牙 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-es.efyunpan.com
+  - name: 西班牙 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-es.efyunpan.com
+  - name: 瑞士 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ch.efyunpan.com
+  - name: 瑞士 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ch.efyunpan.com
+  - name: 荷兰 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-nl.efyunpan.com
+  - name: 荷兰 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-nl.efyunpan.com
+  - name: 瑞典 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-se.efyunpan.com
+  - name: 瑞典 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-se.efyunpan.com
+  - name: 土耳其 01
+    type: trojan
+    server: dl-eu1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-tr.efyunpan.com
+  - name: 土耳其 02
+    type: trojan
+    server: dl-eu2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-tr.efyunpan.com
+  - name: 俄罗斯 01
+    type: trojan
+    server: core1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ru.efyunpan.com
+  - name: 俄罗斯 02
+    type: trojan
+    server: core2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ru.efyunpan.com
+  - name: 加拿大 多伦多
+    type: trojan
+    server: dl-am1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ca.efyunpan.com
+  - name: 加拿大 蒙特利尔
+    type: trojan
+    server: dl-am2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ca2.efyunpan.com
+  - name: 巴西 圣保罗
+    type: trojan
+    server: dl-am1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-br.efyunpan.com
+  - name: 巴西 维涅杜
+    type: trojan
+    server: dl-am2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-br2.efyunpan.com
+  - name: 智利 01
+    type: trojan
+    server: dl-am1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-cl.efyunpan.com
+  - name: 智利 02
+    type: trojan
+    server: dl-am2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-cl.efyunpan.com
+  - name: 阿根廷 01
+    type: trojan
+    server: dl-am1.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ar.efyunpan.com
+  - name: 阿根廷 02
+    type: trojan
+    server: dl-am2.efyunpan.com
+    port: 443
+    password: f1f1002a-aba6-4c37-8699-e0855332f6f5
+    udp: true
+    sni: data-ar.efyunpan.com
 proxy-groups:
   - name: PROXY
-    use:
-      - EFCLOUD1
     type: select
+    proxies:
+      - 美国 01
+      - 美国 02
+      - 美国 03
+      - 美国 04
   - name: Google
+    type: select
+    proxies:
+      - 美国 01
+      - 美国 02
+      - 美国 03
+      - 美国 04
   - name: NETFLIX
-    use:
-      - EFCLOUD2
     type: select
+    proxies:
+      - 新加坡 01
+      - 新加坡 02
+      - 新加坡 03
+      - 新加坡 04
   - name: Github
-    use:
-      - EFCLOUD2
     type: select
+    proxies:
+      - 香港 01
+      - 香港 02
+      - 香港 03
+      - 香港 04
+      - 香港 05
+      - 香港 06
   - name: Telegram
-    use:
-      - EFCLOUD2
     type: select
+    proxies:
+      - 香港 01
+      - 香港 02
+      - 香港 03
+      - 香港 04
+      - 香港 05
+      - 香港 06
+  - name: Bahamut
+    type: select
+    proxies:
+      - 台湾 01
+      - 台湾 02
+      - 台湾 03
+      - 台湾 04
   - name: Spotify
     proxies:
       - DIRECT
-      - PROXY
     type: select
-rule-providers:   
+rule-providers:
   google:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/google.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/google.yaml
     interval: 86400
     path: ./rules/google.yaml
   telegram:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/telegram.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/telegram.yaml
     interval: 86400
     path: ./rules/telegram.yaml
   github:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/github.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/github.yaml
     interval: 86400
     path: ./rules/github.yaml
   apple:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/apple.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/apple.yaml
     interval: 86400
     path: ./rules/apple.yaml
   spotify:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/spotify.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/spotify.yaml
     interval: 86400
     path: ./rules/spotify.yaml
   netflix:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml
     interval: 86400
     path: ./rules/netflix.yaml
   Bahamut:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/Bahamut.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/Bahamut.yaml
     interval: 86400
     path: ./rules/Bahamut.yaml
   NivodTv:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/nivodTv.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/nivodTv.yaml
     interval: 86400
     path: ./rules/nivodTv.yaml
   StreamingMedia:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/StreamingMedia.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/StreamingMedia.yaml
     interval: 86400
     path: ./rules/StreamingMedia.yaml
   global:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/global.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/global.yaml
     interval: 86400
     path: ./rules/global.yaml
   china:
-    behavior: "classical" 
+    behavior: classical
     type: http
-    url: "https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/china.yaml"
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/china.yaml
     interval: 86400
     path: ./rules/china.yaml
 rules:
