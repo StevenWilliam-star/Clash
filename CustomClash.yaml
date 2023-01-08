@@ -530,67 +530,67 @@ rule-providers:
   google:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/google.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/google.yaml
     interval: 86400
     path: ./rules/google.yaml
   telegram:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/telegram.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/telegram.yaml
     interval: 86400
     path: ./rules/telegram.yaml
   github:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/github.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/github.yaml
     interval: 86400
     path: ./rules/github.yaml
   apple:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/apple.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/apple.yaml
     interval: 86400
     path: ./rules/apple.yaml
   spotify:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/spotify.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/spotify.yaml
     interval: 86400
     path: ./rules/spotify.yaml
   netflix:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/netflix.yaml
     interval: 86400
     path: ./rules/netflix.yaml
   Bahamut:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/Bahamut.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/Bahamut.yaml
     interval: 86400
     path: ./rules/Bahamut.yaml
   NivodTv:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/nivodTv.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/nivodTv.yaml
     interval: 86400
     path: ./rules/nivodTv.yaml
   StreamingMedia:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/StreamingMedia.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/StreamingMedia.yaml
     interval: 86400
     path: ./rules/StreamingMedia.yaml
   global:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/global.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/global.yaml
     interval: 86400
     path: ./rules/global.yaml
   china:
     behavior: classical
     type: http
-    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/china.yaml?token=GHSAT0AAAAAAB25W6ZVT3RQGWRHZYP352UKY52MBSQ
+    url: https://raw.githubusercontent.com/StevenWilliam-star/Clash/main/rules/china.yaml
     interval: 86400
     path: ./rules/china.yaml
 rules:
